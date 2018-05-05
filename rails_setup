@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z "$(command -v  brew)" ]; then
+  echo "Install Homebrew https://github.com/Homebrew/brew"
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+if [ -z "$(command -v git)" ]; then
+  echo "Install git"
+  exit 1
+fi
+
+if [ -z "$(command -v rbenv)" ]; then
+  echo "Install rbenv"
+  brew install rbenv
+  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+  echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+  source ~/.bash_profile
+fi
+
