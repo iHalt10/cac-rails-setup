@@ -18,3 +18,4 @@ if [ -z "$(command -v rbenv)" ]; then
   source ~/.bash_profile
 fi
 
+rbenv install 2.5.1
